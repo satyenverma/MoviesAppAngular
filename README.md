@@ -16,3 +16,20 @@ PreReq : Have Angular and NodeJS installed
 2. The admin can 'Add' and 'Delete' movies from the database.
 3. To Add a movie, click on 'Add' button in the toolbar when logged in as admin
 4. To delete a movie, click on any movie in the movie list view, then click on 'delete movie' button (when logged in as an admin).
+
+## Screenshots
+
+Movie list:
+![Movie list](screenshots/movielist.png "movie list")
+
+
+Movie Page:
+![Movie Page](screenshots/moviepage.png "movie page")
+
+
+Movie Search:
+![Movie Search](screenshots/moviesearch.png "movie search")
+
+
+Add Movie:
+![Add Movie](screenshots/addmovie.png "add movie")
