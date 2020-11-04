@@ -1,0 +1,15 @@
+<app-navbar></app-navbar>
+<form [formGroup]="loginForm">
+    <input type="text" placeholder="Username" formControlName="email" />
+    <input type="password" placeholder="Password" formControlName="password" />  
+    <div class ="buttoncenter">
+        <button (click) = "login()">Login</button>
+    </div>
+    
+</form>
+
+
+<div class = "center">
+    <p>To login as an administrator, use Username : 'admin' and any password. </p>
+    <p>Provide any other username and password to login as a normal user. </p>
+</div>

@@ -1,0 +1,16 @@
+<p>
+  <mat-toolbar color="primary">
+    <span *ngIf = "loggedIn == 'true'" routerLink="/movies">{{ title$ | async }}</span>
+    <span *ngIf = "loggedIn == 'false'">{{ title$ | async }}</span>
+    <span class="spacer"></span>
+    
+    <button mat-icon-button class="icon" aria-label="Edit button" *ngIf = "router.url.includes('movies') && isAdmin == 'true';" routerLink="/movies/add">
+      Add
+    </button>
+    <button mat-icon-button class="icon" aria-label="Logout button" (click) = "logout()" *ngIf = "router.url.includes('movies');" >
+      Logout
+    </button>
+
+    
+  </mat-toolbar>
+</p>

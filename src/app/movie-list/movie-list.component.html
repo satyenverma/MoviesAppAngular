@@ -1,0 +1,23 @@
+<app-navbar></app-navbar>
+<div>
+    <div class="form-group">
+        <input type="text" class="search-input" placeholder="Search Here" [(ngModel)]="term">
+        <button mat-icon-button class = "sort-select" (click) = "sortRating()">
+            Sort By Rating
+        </button>
+    </div>   
+</div>
+
+
+
+
+
+<ul *ngIf = "movies">
+    <li *ngFor = "let movie of movies | filter:term">
+        <a [routerLink] = "movie.id"> 
+            <mat-card class="moviecard" >
+                <img mat-card-image [src]="movie.image" alt="Photo of movie">
+            </mat-card>
+        </a>
+    </li>
+</ul>

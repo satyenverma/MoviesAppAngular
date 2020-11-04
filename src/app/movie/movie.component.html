@@ -1,0 +1,63 @@
+<mat-grid-list cols = "3" rowHeight = "350px">
+    <mat-grid-tile colspan = "1">
+        <div>
+            <img [src]="movie.image" />
+        </div>
+        <br>
+        
+    </mat-grid-tile>
+    <mat-grid-tile colspan = "2">
+        <div>
+            <div>
+                <form [formGroup]="movieForm" (ngSubmit)="addMovie()">
+                    <input type="text"  [(ngModel)] = "com" placeholder="Ex. I think the movie was..." formControlName="review" />                  
+                    <br>
+                    <button mat-button [disabled]="!movieForm.valid" type="submit" (click) = "postComment()">Add</button>
+                </form>
+            </div>
+        </div>
+    </mat-grid-tile>
+    <mat-grid-tile colspan = "1">
+        <div>
+            <button mat-icon-button class="icon" aria-label="Edit button" *ngIf = "isAdmin == 'true';" (click) = "deleteMovie()">
+                Delete Movie
+            </button>
+            <br *ngIf = "isAdmin == 'true';">
+            <h1>{{ movie.name }}</h1>
+            <h2>{{ movie.genre }} | {{ movie.releaseYear }}</h2>
+            <h2>Average Rating : {{ movie.averageRating }}</h2>
+            <h2>User Rating : {{ stars }}</h2>
+            <fieldset class="rating">
+                <ng-container  *ngFor="let num of [5, 4, 3, 2, 1]">
+                    <input (click)="starHandler(num)" 
+                        [id]="'star'+num"
+                        [value]="num-0.5"
+                        name="rating" 
+                        type="radio" />
+            
+                    <label class="full" [for]="'star'+num"></label>
+            
+                    <input (click)="starHandler(num-0.5)" 
+                        [value]="num-0.5"
+                        [id]="'halfstar'+num" 
+                        name="rating" 
+                        type="radio"  />
+            
+                    <label class="half" [for]="'halfstar'+num"></label>
+            
+                </ng-container>
+            </fieldset>
+        </div>
+    </mat-grid-tile>
+
+    <mat-grid-tile colspan = "2">
+        
+        <div>
+            <h1 >Reviews:</h1>
+            <div *ngFor = "let comments of movie.comments">
+                <h2>"{{comments}}"</h2>
+            </div>
+        </div>
+    </mat-grid-tile>
+    
+</mat-grid-list>
