@@ -2,26 +2,17 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.19.
 
-## Development server
+## Steps to Run
+PreReq : Have Angular and NodeJS installed
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+1. Clone repository to your system.
+2. Run "npm install" to install dependencies.
+3. IMPORTANT: Run "npm run api" to run the json-server script
+4. Run "ng serve". Navigate to `http://localhost:4200/`
 
-## Code scaffolding
+## About
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+1. To login as an adminsitrator, use UserName 'admin' and any password. To login as a normal user, use any UserName and Password.
+2. The admin can 'Add' and 'Delete' movies from the database.
+3. To Add a movie, click on 'Add' button in the toolbar when logged in as admin
+4. To delete a movie, click on any movie in the movie list view, then click on 'delete movie' button (when logged in as an admin).
